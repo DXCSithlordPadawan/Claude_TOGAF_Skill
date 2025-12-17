@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:archimate="http://www.archimatetool.com/archimate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.archimatetool.com/archimate http://www.archimatetool.com/archimate.xsd" name="Minimal Test" id="id-7bf42220-141f-491f-987f-2e313e0640b4" version="5.0.0">
+  <purpose>Test relationships in views</purpose>
+  <folder name="Strategy" id="id-518ee987-3868-41ff-8bb5-80e22a0752b6" type="strategy"/>
+  <folder name="Business" id="id-f16da41d-1c17-4775-bfe8-3306c81e6efb" type="business"/>
+  <folder name="Application" id="id-fdba39ce-a5c5-41ed-b1c1-c04817191952" type="application">
+    <element xsi:type="archimate:ApplicationComponent" name="Component A" id="id-4de6a3b2-3bb3-435e-9bc8-2db9af6f8b4d">
+      <documentation>First component</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Component B" id="id-c3c171ed-2e1b-46e8-ba34-0e491672e4a0">
+      <documentation>Second component</documentation>
+    </element>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-c1e8cf28-1b11-4869-a3f7-6bd0112c2c87" type="technology"/>
+  <folder name="Motivation" id="id-c76e0314-33c9-4fc6-93f9-a343ef145151" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-6f5e53d1-3b4f-4210-b77e-60303b8c8d18" type="implementation_migration"/>
+  <folder name="Other" id="id-4f08ff80-c5f9-43da-b2f1-f1893d8f5315" type="other"/>
+  <folder name="Relations" id="id-8e4e3c37-38a6-47bb-9e81-68f0f06eb280" type="relations">
+    <element xsi:type="archimate:CompositionRelationship" id="id-6f170244-a3a4-4d43-aad7-9f3028270ab4" source="id-4de6a3b2-3bb3-435e-9bc8-2db9af6f8b4d" target="id-c3c171ed-2e1b-46e8-ba34-0e491672e4a0" name="contains"/>
+  </folder>
+  <folder name="Views" id="id-0e258c60-78ea-4142-a5bd-2b9955c9b13e" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Test View" id="id-5faaad01-fe08-439f-9c59-631d605fc62b">
+      <documentation>Simple test view</documentation>
+      <viewpoint>Application Structure</viewpoint>
+      <child xsi:type="archimate:DiagramObject" id="id-b078bfea-c83e-4332-b854-f33c8ca708ee" archimateElement="id-4de6a3b2-3bb3-435e-9bc8-2db9af6f8b4d">
+        <bounds x="100" y="100" width="120" height="60"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-63ae35db-a98d-419e-b2cd-b1deeb947377" archimateElement="id-c3c171ed-2e1b-46e8-ba34-0e491672e4a0">
+        <bounds x="300" y="100" width="120" height="60"/>
+      </child>
+      <child xsi:type="archimate:Connection" id="id-97afe2c1-b93f-423c-9ed3-214131796540" source="id-b078bfea-c83e-4332-b854-f33c8ca708ee" target="id-63ae35db-a98d-419e-b2cd-b1deeb947377" archimateRelationship="id-6f170244-a3a4-4d43-aad7-9f3028270ab4"/>
+    </element>
+  </folder>
+</archimate:model>

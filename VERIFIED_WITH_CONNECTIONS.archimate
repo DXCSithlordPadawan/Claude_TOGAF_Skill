@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:archimate="http://www.archimatetool.com/archimate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.archimatetool.com/archimate http://www.archimatetool.com/archimate.xsd" name="clean-example" id="id-091e1bd3-d422-489a-a4c7-8634156acba6" version="5.0.0">
+  <purpose>ArchiMate model generated from repository analysis</purpose>
+  <folder name="Strategy" id="id-937b6cbe-13b7-4cf8-8ec3-52d5d36b1a9f" type="strategy"/>
+  <folder name="Business" id="id-31bf4932-356a-4c50-b876-eec0e854c2c1" type="business"/>
+  <folder name="Application" id="id-7b3c84a3-de6d-43ba-852f-d01e87c9556a" type="application">
+    <element xsi:type="archimate:ApplicationComponent" name="test-repo" id="id-22122594-ff1e-45ba-b153-7560205a3e45">
+      <documentation>Main application from repository: /home/claude/test-repo</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="src" id="id-fef68f24-9145-4d6c-a610-f0fea50198d4">
+      <documentation>Source Code: src</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="express" id="id-5af8178e-0564-42d7-996c-884cd3112e04">
+      <documentation>External dependency (npm)</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="pg" id="id-ac2e9767-85b3-478c-8b82-54d55a37a8b9">
+      <documentation>External dependency (npm)</documentation>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Database: SQL" id="id-65a4c4d6-5130-4916-8b4a-d583a1e7a11f">
+      <documentation>Database schema from: database.sql</documentation>
+    </element>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-cd2af7f8-b03a-49d4-9e55-0f37527f3305" type="technology">
+    <element xsi:type="archimate:Node" name="Database Server" id="id-0d4c6af4-1532-412f-bbb0-9c208f495fd8">
+      <documentation>Database server hosting 1 database(s)</documentation>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Database Management System" id="id-7a0f1c02-1f55-45d1-a43c-e654c6f17a63">
+      <documentation>DBMS (PostgreSQL, MySQL, MongoDB, etc.)</documentation>
+    </element>
+    <element xsi:type="archimate:Artifact" name="Database File: SQL" id="id-ee7ef165-fd97-4d4e-8df9-55478cfb5de0">
+      <documentation>Physical database file from: database.sql</documentation>
+    </element>
+    <element xsi:type="archimate:Node" name="Docker Container" id="id-5efdf9b6-f7ea-4cb2-b651-8d7667d6bee3">
+      <documentation>Container defined in Dockerfile</documentation>
+    </element>
+  </folder>
+  <folder name="Motivation" id="id-e0c7df48-0582-4a3c-9711-e4e89f96279e" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-35cadad7-86ef-4300-99b0-027b5985592f" type="implementation_migration"/>
+  <folder name="Other" id="id-023731cb-b30a-416a-8dc9-e1572a8a633b" type="other"/>
+  <folder name="Relations" id="id-7348fdd4-0c08-45f4-b0a8-2226d61f2777" type="relations">
+    <element xsi:type="archimate:CompositionRelationship" id="id-a0ba8c65-1ab4-4497-ab13-cbe1056ff0d0" source="id-22122594-ff1e-45ba-b153-7560205a3e45" target="id-fef68f24-9145-4d6c-a610-f0fea50198d4"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-bc23e215-1b9a-4a64-ab2e-7ea61576748c" source="id-5af8178e-0564-42d7-996c-884cd3112e04" target="id-22122594-ff1e-45ba-b153-7560205a3e45" name="provides functionality"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-b3a99828-f21d-40f2-a488-3259eac97429" source="id-ac2e9767-85b3-478c-8b82-54d55a37a8b9" target="id-22122594-ff1e-45ba-b153-7560205a3e45" name="provides functionality"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-e8b54e1e-bd59-4362-9563-a871270627f6" source="id-22122594-ff1e-45ba-b153-7560205a3e45" target="id-65a4c4d6-5130-4916-8b4a-d583a1e7a11f"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-0779bf21-c7bc-43d9-91f7-2c943fafbf58" source="id-7a0f1c02-1f55-45d1-a43c-e654c6f17a63" target="id-0d4c6af4-1532-412f-bbb0-9c208f495fd8"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-6d5f1f13-00f4-4c10-b01e-02ff4ad0cfcf" source="id-ee7ef165-fd97-4d4e-8df9-55478cfb5de0" target="id-0d4c6af4-1532-412f-bbb0-9c208f495fd8"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-03b08410-4aaa-44c0-a025-9779f3a7c5b1" source="id-ee7ef165-fd97-4d4e-8df9-55478cfb5de0" target="id-65a4c4d6-5130-4916-8b4a-d583a1e7a11f"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-4333ba80-f285-4493-856f-e99e25706adb" source="id-22122594-ff1e-45ba-b153-7560205a3e45" target="id-5efdf9b6-f7ea-4cb2-b651-8d7667d6bee3"/>
+  </folder>
+  <folder name="Views" id="id-9656cafb-1e51-4bbe-b0e4-0353dfedb51b" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Application Structure" id="id-8d572478-e745-4341-9892-2b5380881079">
+      <documentation>Overview of application components and their relationships</documentation>
+      <viewpoint>Application Structure</viewpoint>
+      <child xsi:type="archimate:DiagramObject" id="id-0a144370-2ef8-4190-bb19-0b619da2fce8" archimateElement="id-22122594-ff1e-45ba-b153-7560205a3e45">
+        <bounds x="300" y="100" width="150" height="80"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-2e588798-fec5-44d7-bf89-6fde3fc45ca1" archimateElement="id-fef68f24-9145-4d6c-a610-f0fea50198d4">
+        <bounds x="100" y="250" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-28ea58de-6006-492b-a2dd-21c336682999" archimateElement="id-5af8178e-0564-42d7-996c-884cd3112e04">
+        <bounds x="550" y="150" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-11e0ba38-eab2-431b-a00b-827cd195799e" archimateElement="id-ac2e9767-85b3-478c-8b82-54d55a37a8b9">
+        <bounds x="550" y="240" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:Connection" id="id-e1ea9aaa-11b6-48d4-8dd6-3eda14848073" source="id-0a144370-2ef8-4190-bb19-0b619da2fce8" target="id-2e588798-fec5-44d7-bf89-6fde3fc45ca1" archimateRelationship="id-a0ba8c65-1ab4-4497-ab13-cbe1056ff0d0"/>
+      <child xsi:type="archimate:Connection" id="id-6d4ee749-e396-485c-930e-0d509eb5ee54" source="id-28ea58de-6006-492b-a2dd-21c336682999" target="id-0a144370-2ef8-4190-bb19-0b619da2fce8" archimateRelationship="id-bc23e215-1b9a-4a64-ab2e-7ea61576748c"/>
+      <child xsi:type="archimate:Connection" id="id-3076950c-71ed-4dfa-9a85-ec56b07bdbe4" source="id-11e0ba38-eab2-431b-a00b-827cd195799e" target="id-0a144370-2ef8-4190-bb19-0b619da2fce8" archimateRelationship="id-b3a99828-f21d-40f2-a488-3259eac97429"/>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Technology Infrastructure" id="id-ff3e621a-435b-49ec-b853-0189b5509bb4">
+      <documentation>Infrastructure and deployment architecture including databases</documentation>
+      <viewpoint>Technology</viewpoint>
+      <child xsi:type="archimate:DiagramObject" id="id-5d030e5f-292d-4301-bdc5-23d8585bde2b" archimateElement="id-0d4c6af4-1532-412f-bbb0-9c208f495fd8">
+        <bounds x="100" y="150" width="140" height="70"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-67957bac-641a-42b0-b457-49d34104076c" archimateElement="id-7a0f1c02-1f55-45d1-a43c-e654c6f17a63">
+        <bounds x="100" y="280" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-b6da6480-087b-4088-96a1-8429a0712689" archimateElement="id-ee7ef165-fd97-4d4e-8df9-55478cfb5de0">
+        <bounds x="280" y="280" width="100" height="45"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-583775ed-f9f3-4ae6-8976-2675807f27e9" archimateElement="id-5efdf9b6-f7ea-4cb2-b651-8d7667d6bee3">
+        <bounds x="280" y="150" width="140" height="70"/>
+      </child>
+      <child xsi:type="archimate:Connection" id="id-1a22860f-a3b5-4648-9d4e-8e2f08d2a14b" source="id-67957bac-641a-42b0-b457-49d34104076c" target="id-5d030e5f-292d-4301-bdc5-23d8585bde2b" archimateRelationship="id-0779bf21-c7bc-43d9-91f7-2c943fafbf58"/>
+      <child xsi:type="archimate:Connection" id="id-3dbac365-b80b-4323-9c46-19247e42b18c" source="id-b6da6480-087b-4088-96a1-8429a0712689" target="id-5d030e5f-292d-4301-bdc5-23d8585bde2b" archimateRelationship="id-6d5f1f13-00f4-4c10-b01e-02ff4ad0cfcf"/>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Data Architecture" id="id-65e849b9-5de8-4f14-9e03-b31e41660f2f">
+      <documentation>Application data architecture and database access</documentation>
+      <viewpoint>Application Structure</viewpoint>
+      <child xsi:type="archimate:DiagramObject" id="id-dad9b697-9625-461b-acba-509c653c6e6d" archimateElement="id-22122594-ff1e-45ba-b153-7560205a3e45">
+        <bounds x="100" y="100" width="150" height="80"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-dbfd0f1c-5bb3-4a7b-b235-ffda4e0aae6c" archimateElement="id-65a4c4d6-5130-4916-8b4a-d583a1e7a11f">
+        <bounds x="80" y="250" width="140" height="60"/>
+      </child>
+      <child xsi:type="archimate:Connection" id="id-0471e5b7-d23d-4f6c-8281-7b8fe691acb8" source="id-dad9b697-9625-461b-acba-509c653c6e6d" target="id-dbfd0f1c-5bb3-4a7b-b235-ffda4e0aae6c" archimateRelationship="id-e8b54e1e-bd59-4362-9563-a871270627f6"/>
+    </element>
+  </folder>
+</archimate:model>
